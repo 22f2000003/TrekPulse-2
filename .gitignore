@@ -1,0 +1,39 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# Caching & Local databases
+*.db
+*.sqlite3
+dump.rdb
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Exports & Generated Reports
+app/static/exports/bookings_*.csv
+app/static/reports/monthly_report_*.html
+
+# Submission packages
+submission.zip
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Scripts, local runs, and submission documentation
+git_history_builder.py
+package_submission.py
+PROJECT_REPORT_TEMPLATE.md
+project_details.md
+redis-local/
