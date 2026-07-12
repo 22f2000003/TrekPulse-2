@@ -1,0 +1,202 @@
+/* Modern Outfit Typography */
+body {
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+
+/* Color Palette Variable Tokens */
+:root {
+    --primary: #0f766e;
+    --primary-light: #14b8a6;
+    --primary-bg: #f0fdfa;
+    --dark-slate: #0f172a;
+    --sidebar-width: 250px;
+    --card-shadow: 0 4px 20px -2px rgba(15, 118, 110, 0.08), 0 2px 10px -1px rgba(0, 0, 0, 0.04);
+    --hover-shadow: 0 10px 30px -5px rgba(15, 118, 110, 0.15), 0 5px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Glassmorphism sidebar & elements */
+.glass-sidebar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    width: var(--sidebar-width);
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    color: #cbd5e1;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* Card Designs */
+.premium-card {
+    background: #ffffff;
+    border: 1px solid rgba(15, 118, 110, 0.06);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.premium-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+    border-color: rgba(20, 184, 166, 0.3);
+}
+
+/* Text & Accent Gradient */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Custom Buttons with Emerald Accent */
+.btn-premium {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-premium:hover {
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.35);
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.btn-premium-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+    border-radius: 8px;
+    padding: 8px 22px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-premium-outline:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* Active links highlighting */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 4px 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background: rgba(20, 184, 166, 0.15);
+    color: #ffffff;
+}
+
+.sidebar-link i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    color: var(--primary-light);
+}
+
+/* Difficulty Badges */
+.badge-difficulty-easy {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.badge-difficulty-moderate {
+    background-color: #fef9c3;
+    color: #a16207;
+}
+
+.badge-difficulty-hard {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Progress bar customizations */
+.progress-slots {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #f1f5f9;
+}
+
+.progress-bar-slots {
+    background: linear-gradient(90deg, var(--primary-light), var(--primary));
+    border-radius: 4px;
+}
+
+/* Animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+.invalid-shake {
+    animation: shake 0.2s ease-in-out 0s 2;
+    border-color: #ef4444 !important;
+}
+
+/* Mobile responsive fixes */
+@media(max-width: 768px) {
+    .glass-sidebar {
+        transform: translateX(-100%);
+    }
+    .glass-sidebar.active {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+}
+
+/* Auth Screen Background and Card Styling */
+.auth-bg {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hover-white {
+    transition: color 0.2s ease;
+}
+
+.hover-white:hover {
+    color: #ffffff !important;
+}
+
+
